@@ -13,8 +13,8 @@ load_dotenv()
 URL = "https://www.angelone.in/careers"  
 
 # Connect to MongoDB Atlas
-MONGO_URI = os.getenv("MONGO_URI")
-client = MongoClient(MONGO_URI)
+MONGO_URL = os.getenv("MONGO_URL")
+client = MongoClient(MONGO_URL)
 db = client["job_tracker"]
 col = db["jobCollection"]
 

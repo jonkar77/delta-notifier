@@ -23,8 +23,8 @@ jobs:
       - name: Run job checker
         run: python main.py
         env:
-          REDIS_URL: ${{ secrets.REDIS_URL }}
-          REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          MONGO_URL: ${{ secrets.MONGO_URL }}
+
