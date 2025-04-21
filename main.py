@@ -14,7 +14,6 @@ def run_scraper(module_path):
     print(f"🔍 Checking jobs from {source}...")
     current_jobs = scraper.scrape()
     previous_jobs = load_previous_jobs(source)
-    previous_jobs.pop()
     if not previous_jobs:
         print(f"📝 Initial save for {source}.")
         save_jobs(source, current_jobs)
