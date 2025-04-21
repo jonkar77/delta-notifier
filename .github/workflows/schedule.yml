@@ -1,8 +1,8 @@
 name: Job Checker Scheduler
 
 on:
-  # schedule:
-  #   - cron: '* * * * *'
+  schedule:
+    - cron: '* */6 * * *'
   workflow_dispatch:  # allows manual triggering if needed
 
 jobs:
