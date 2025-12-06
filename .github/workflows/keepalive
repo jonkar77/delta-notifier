@@ -1,0 +1,19 @@
+name: Keep Repo Active
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"   # runs weekly
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update a dummy file to keep repo active
+        run: |
+          echo "Last update: $(date)" > .keepalive
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .keepalive
+          git commit -m "keep repo active" || echo "No changes"
+          git push
