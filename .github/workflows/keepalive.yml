@@ -2,14 +2,17 @@ name: Keep Repo Active
 
 on:
   schedule:
-    - cron: "0 0 * * 3"   # runs weekly
+    - cron: "0 0 * * 3"
   workflow_dispatch:
 
 jobs:
   keepalive:
     runs-on: ubuntu-latest
     steps:
-      - name: Update a dummy file to keep repo active
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Update keepalive file
         run: |
           echo "Last update: $(date)" > .keepalive
           git config user.name "github-actions"
