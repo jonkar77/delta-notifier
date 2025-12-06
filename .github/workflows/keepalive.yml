@@ -2,7 +2,7 @@ name: Keep Repo Active
 
 on:
   schedule:
-    - cron: "0 0 * * 1"   # runs weekly
+    - cron: "0 0 * * 3"   # runs weekly
   workflow_dispatch:
 
 jobs:
