@@ -6,6 +6,9 @@ import traceback
 
 SCRAPERS = [
     "scrapers.angelone",
+    "scrapers.razorpay",
+    "scrapers.cred",
+    "scrapers.justpay"
 ]
 
 def run_scraper(module_path):
@@ -22,7 +25,6 @@ def run_scraper(module_path):
     new_jobs = [job for job in current_jobs if job not in previous_jobs]
     if new_jobs:
         print(f"📬 {len(new_jobs)} new jobs found for {source}")
-        # print(f"📬 {new_jobs}")
         send_email(source, new_jobs)
         save_jobs(source, current_jobs)
     else:
