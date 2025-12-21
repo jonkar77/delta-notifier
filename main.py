@@ -7,7 +7,8 @@ import traceback
 SCRAPERS = [
     "scrapers.angelone",
     "scrapers.razorpay",
-    "scrapers.cred"
+    "scrapers.cred",
+    "scrapers.justpay"
 ]
 
 def run_scraper(module_path):
